@@ -1,0 +1,10 @@
+-- N4 (Namana): look for ML-DSA key strings. Adjust table/column after N2 shows where keys appear.
+-- Dry-run EACH variant first. Strings to try: 'ml-dsa-65' (covers the hash form too), 'MLDSA65', 'ml_dsa_65'.
+-- ML-DSA-65 went live on NEAR mainnet 20 Jul 2026 (Check; earlier source check 28 Oct),
+-- so restrict by block_date >= '2026-07-20' to keep the scan small.
+-- Example shape (column name is a guess until N2 confirms it):
+-- SELECT block_date, COUNT(*) AS n
+-- FROM `bigquery-public-data.crypto_near_mainnet_us.receipt_actions`
+-- WHERE block_date >= '2026-07-20'
+--   AND (LOWER(args) LIKE '%ml-dsa-65-hash%' OR LOWER(args) LIKE '%mldsa65%' OR LOWER(args) LIKE '%ml_dsa_65%')
+-- GROUP BY block_date ORDER BY block_date;

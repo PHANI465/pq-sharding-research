@@ -1,0 +1,8 @@
+# Versions below are what the week-1 tests were run with in Claude's workspace (Python 3.13, Linux).
+# Meet: after installing on your machine, run `pip freeze > requirements.txt` and commit the result,
+# so this file reflects YOUR environment (step M1/M9). Ocean needs Python 3.11 or later (Fact: D-Wave docs).
+pymetis==2025.2.2
+ortools==9.15.6755
+dwave-ocean-sdk==9.5.0
+networkx==3.7
+numpy==2.5.3

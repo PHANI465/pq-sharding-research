@@ -1,0 +1,26 @@
+# credentials and keys: never commit
+*.json.key
+*service-account*.json
+*credentials*.json
+.env
+*.pem
+*.key
+.config/gcloud/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# large or rebuildable data (results are rebuilt from queries)
+data/*
+!data/.gitkeep
+*.parquet
+*.csv.gz
+*.zip
+
+# notebooks and OS
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
